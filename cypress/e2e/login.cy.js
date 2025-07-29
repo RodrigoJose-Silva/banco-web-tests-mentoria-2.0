@@ -1,16 +1,33 @@
 describe('Login', () => {
   it('Login com dados validos devem permitir entrada no sistema', () => {
     cy.visit('http://127.0.0.1:4000')
+
     cy.get('#username')
       .click()
       .type('julio.lima')
     cy.get('#senha')
       .click()
       .type('123456')
-    cy.get('#login-section > .btn')
+    cy.contains('button', 'Entrar')
       .click()
 
     cy.contains('h4', 'Realizar Transferência')
       .should('be.visible')
+  })
+
+  it('Não deve permitir efetuar login com senha incorreta exibindo mensagem de erro', () => {
+    cy.visit('http://127.0.0.1:4000')
+
+    cy.get('#username')
+      .click()
+      .type('julio.lima')
+    cy.get('#senha')
+      .click()
+      .type('012345')
+    cy.contains('button', 'Entrar')
+      .click()
+
+    cy.get('.toast')
+      .should('have.text', 'Erro no login. Tente novamente.')
   })
 })
