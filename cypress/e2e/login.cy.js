@@ -1,7 +1,8 @@
 describe('Login', () => {
-  it('Login com dados validos devem permitir entrada no sistema', () => {
+  beforeEach(() => {
     cy.visit('http://127.0.0.1:4000')
-
+  })
+  it('Login com dados validos devem permitir entrada no sistema', () => {
     cy.get('#username')
       .click()
       .type('julio.lima')
@@ -16,8 +17,6 @@ describe('Login', () => {
   })
 
   it('Não deve permitir efetuar login com senha incorreta exibindo mensagem de erro', () => {
-    cy.visit('http://127.0.0.1:4000')
-
     cy.get('#username')
       .click()
       .type('julio.lima')
