@@ -11,6 +11,7 @@ describe('Login', () => {
       .type('123456')
     cy.contains('button', 'Entrar')
       .click()
+    //cy.screenshot('apos-clicar-entrar')  função para tirar screenshot após determinada ação, pode usar em qlq lugar do cenário de teste
 
     cy.contains('h4', 'Realizar Transferência')
       .should('be.visible')
