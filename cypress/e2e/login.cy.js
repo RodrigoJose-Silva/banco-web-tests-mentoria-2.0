@@ -1,6 +1,6 @@
 describe('Login', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:4000')
+    cy.visit(Cypress.env('URL'))
   })
   it('Login com dados validos devem permitir entrada no sistema', () => {
     cy.fixture('credenciais').then(credenciais => {
