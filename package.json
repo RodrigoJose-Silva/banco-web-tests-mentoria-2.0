@@ -6,7 +6,8 @@
     "cypress": "^14.5.3"
   },
   "scripts": {
-    "test": "cypress run",
+    "test": "cypress run --env  URL=http://127.0.0.1:4000",
+    "test-uat": "cypress run --env  URL=http://www.uat.com:4000",
     "cy:headed": "cypress run --headed",
     "cy:open": "cypress open"
   },
