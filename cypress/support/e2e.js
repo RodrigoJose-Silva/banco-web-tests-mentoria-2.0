@@ -1,17 +1,11 @@
-// ***********************************************************
-// This example support/e2e.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+// cypress/support/e2e.js
+// Este arquivo é executado automaticamente antes de cada arquivo de teste.
+// É um ótimo lugar para colocar configurações globais e comportamentos que modificam o Cypress.
 
-// Import commands.js using ES2015 syntax:
+// Importa comandos personalizados definidos em './commands'.
+// Este arquivo centraliza a importação de todos os comandos customizados do projeto.
 import './commands'
+
+// Importa o registro do Cypress Mochawesome Reporter.
+// Isso integra o reporter para que ele possa gerar relatórios detalhados após a execução dos testes.
+import 'cypress-mochawesome-reporter/register'

@@ -1,32 +1,11 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// cypress/support/commands.js
+// Este arquivo é o ponto central para importação de comandos customizados do Cypress.
+// Ele agrega comandos de diferentes módulos, tornando-os disponíveis globalmente para todos os testes.
 
-//Comandos customizados para interagir com a aplicação
+// Importa comandos de uso geral, que podem ser aplicados em diversas partes da aplicação.
 import './commands/common'
 
-//Comandos customizados para interagir com funcionalidades especificas
+// Importa comandos específicos para a funcionalidade de login.
 import './commands/login'
+// Importa comandos específicos para a funcionalidade de transferência.
 import './commands/transferencia'
